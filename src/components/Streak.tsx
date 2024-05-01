@@ -20,7 +20,7 @@ const Streak = ({ streak }: StreakProps) => {
           {combination.map((e, index) => (
             <div key={index}>{e}</div>
           ))}
-          <div className="text-red-900">
+          <div className="text-red-800">
             {(combination[1] / entries.length).toPrecision(3).toString()}%
           </div>
         </div>
