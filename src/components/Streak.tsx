@@ -7,6 +7,8 @@ const Streak = ({ streak }: StreakProps) => {
 
   const entries = Object.entries(streak);
 
+  let entriesAmount = entries.reduce((acc, entry) => acc + entry[1], 0)
+
   return (
     <div className="flex gap-2 flex-col p-2">
       <div className="grid grid-cols-3 gap-4">
@@ -21,7 +23,7 @@ const Streak = ({ streak }: StreakProps) => {
             <div key={index}>{e}</div>
           ))}
           <div className="text-red-800">
-            {(combination[1] / entries.length).toPrecision(3).toString()}%
+            {(combination[1] / entriesAmount * 100).toPrecision(3).toString()}%
           </div>
         </div>
       ))}
