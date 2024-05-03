@@ -21,7 +21,7 @@ export const generateStreakData = (txtFile: string) => {
 
       if (noHyphen.length === 30) console.log('index', i)
 
-      if (!noHyphen) {
+      if (!noHyphen || i < noEmptyLinesAndNumbers.length / 2 + 200) {
         console.log("removing ", noHyphen);
         return;
       }
