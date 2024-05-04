@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEventHandler, useState } from "react";
+import { ChangeEventHandler } from "react";
 import { HandleFileUploadP } from "../../types";
 
 type FileProps = {
