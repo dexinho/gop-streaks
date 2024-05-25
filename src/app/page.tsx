@@ -5,6 +5,7 @@ import { generateStreakData } from "@/utility/generateStreakData";
 import { HandleFileUploadP } from "../../types";
 import { useState } from "react";
 import Streak from "@/components/Streak";
+import { Button } from "@nextui-org/react";
 
 const HomePage = () => {
   const [streaks, setStreaks] = useState<any[]>([]);
@@ -37,6 +38,7 @@ const HomePage = () => {
     <div className="flex  flex-col gap-4 items-center justify-center">
       <h1>UPLOAD GOP PATTERN FILE</h1>
       <File handleFileUpload={handleFileUpload} />
+      <Button variant="solid" color="primary">Button</Button>
       <div className="flex gap-4">
         {streaks.map((streak, index) => (
           <div key={index} className="flex  gap-4 flex-col">
