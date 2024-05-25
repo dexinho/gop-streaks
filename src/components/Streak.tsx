@@ -18,7 +18,7 @@ const Streak = ({ streak }: StreakProps) => {
       </div>
 
       {entries.map((combination, index) => (
-        <div key={index} className={`grid grid-cols-3 px-2 gap-4 rounded-2xl ${index % 2 ? "bg-slate-50" : "bg-slate-300"}`}>
+        <div key={index} className={`grid grid-cols-3 px-2 gap-4 rounded-2xl ${index % 2 ? "bg-slate-800" : "bg-slate-900"}`}>
           {combination.map((e, index) => (
             <div key={index}>{e}</div>
           ))}
