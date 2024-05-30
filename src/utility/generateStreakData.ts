@@ -1,6 +1,8 @@
 export const generateStreakData = (txtFile: string) => {
   const initialSplit = txtFile.split("\r\n");
 
+  console.log(initialSplit)
+  console.log(initialSplit.length);
   let amount = 0;
 
   const noEmptyLinesAndNumbers = initialSplit.filter(
@@ -10,7 +12,6 @@ export const generateStreakData = (txtFile: string) => {
       e !== "-"
   );
 
-  console.log(noEmptyLinesAndNumbers);
 
   const streakData: Record<string, any> = {};
 
@@ -19,12 +20,7 @@ export const generateStreakData = (txtFile: string) => {
       let noHyphen: string;
       noHyphen = e.replace(/\-+|\s+/g, "");
 
-      if (noHyphen.length === 30) console.log('index', i)
-
-      if (!noHyphen) {
-        console.log("removing ", noHyphen);
-        return;
-      }
+      if (noHyphen.length === 19) console.log("index", i);
 
       if (noHyphen.length in streakData) streakData[noHyphen.length]++;
       else streakData[noHyphen.length] = 1;
