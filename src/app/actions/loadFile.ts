@@ -3,7 +3,8 @@ export const loadFile = async (file: File) => {
     const fileReader = new FileReader();
 
     if (file.type === "text/plain") fileReader.readAsText(file);
-    if (file.type === "image/jpeg") fileReader.readAsDataURL(file);
+    else if (file.type === "image/jpeg") fileReader.readAsDataURL(file);
+    else throw Error;
 
     fileReader.onload = (e) => {
       if (!e.target) return;
